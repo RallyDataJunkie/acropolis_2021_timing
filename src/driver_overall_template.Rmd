@@ -32,9 +32,13 @@ last_col_idx = length(driver_rebased) #which(colnames(driver_rebased) == last_st
   caption = paste0('Stage delta (s) — ', driverCode, ' — ', rally_name)
   
   
-  # If we have more than 10 columns this is too wide.
-  # S need to group by every 10 columns.
+  # TO DO - need to sort the table by overall leader
+  # at end of last available stage
+  
+  # TO DO - If we have more than 10 columns this is too wide.
+  # Need to group by every 10 columns via a template
   driver_rebased %>% 
+    dplyr::arrange(factor(code, levels = overall_order)) %>%
     mutate_if(is.numeric, round, digits = 1)  %>%
     formattable(align='c',
                       list(area(col = 2:last_col_idx) ~ color_tile2(c("green",'white',"red")),
