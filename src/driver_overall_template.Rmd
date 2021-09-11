@@ -1,0 +1,46 @@
+```{r}
+cat(paste("Enter overall_driver_template", driverCode),
+    file=logFile, sep='\n')
+```
+
+## Driver Overall Report, `r driverCode` {-}
+
+Rebased reports to end of `r last_stage_code`.
+
+
+### Rebased Stage Times
+
+`r driverCode`'s delta on each stage compared to other drivers.
+
+```{r}
+
+driver_blank = !(driverCode %in% multi_stage_times_wide$code)
+```
+
+`r ifelse(driver_blank, "No stage", "Stage")` report for `r driverCode`.
+
+```{r overall-driver-stagedelta-{{last_stage_code}}-{{driverCodeClean}}, cache=FALSE}
+if (!driver_blank){
+  driver_rebased = rebase(multi_stage_times_wide, driverCode,
+                       stage_codes, id_col='code') %>%
+                  select(code, all_of(stage_codes)) #%>%
+                  #filter_at(vars(starts_with("split_")),
+                  #              any_vars(! is.na(.)))
+
+last_col_idx = length(driver_rebased) #which(colnames(driver_rebased) == last_stage_code)[[1]]
+
+  caption = paste0('Stage delta (s) — ', driverCode, ' — ', rally_name)
+  
+  
+  # If we have more than 10 columns this is too wide.
+  # S need to group by every 10 columns.
+  driver_rebased %>% 
+    mutate_if(is.numeric, round, digits = 1)  %>%
+    formattable(align='c',
+                      list(area(col = 2:last_col_idx) ~ color_tile2(c("green",'white',"red")),
+                   entryId=FALSE), caption=caption )
+
+}
+```
+
+*TO DO - the chart is not scrollable so we need to template the table to produce as many tables as required with 10 stage columns each.*

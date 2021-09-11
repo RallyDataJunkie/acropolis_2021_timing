@@ -87,25 +87,42 @@ get_split_rank = function(df, split_cols){
   df %>% mutate(across( all_of(split_cols), dense_rank ))
 }
 
-xnormalize = function(x){
+xnormalize = function(x, max_x=120){
+  # Normalise to the full range of values about 0
+  # O will map to 0.5 in the normalised range
+  
+  # Try to set a maxval for the normalizer
+  # This is okay for color limits but NOT as a true normalizer
+  
+  #x = normalize(x) * max_x
+  # Set the max absolute value; assume seconds so 2 mins?
+  x = ifelse(abs(x)>max_x, sign(x)*max_x, x)
+  #normalize(x)
+  
+  max_Limit =  max(abs(x))
+  x = c(x, -max_Limit, max_Limit)
+  normalize(x)[1:(length(x)-2)]
+}
+
+xnormalize_orig = function(x){
   # Normalise to the full range of values about 0
   # O will map to 0.5 in the normalised range
   x = c(x, -max(abs(x)), max(abs(x)))
   normalize(x)[1:(length(x)-2)]
 }
 
-
 color_tile2 <- function (...) {
   formatter("span", style = function(x) {
     # Handle NA
     x = ifelse(is.na(x), -1e-9, x)
+    max_x = max(x)
     style(display = "block",
           'text-align' = 'center',
           padding = "0 4px", 
           `border-radius` = "4px",
           `font.weight` = ifelse(x==-1e-9,"normal",
-                                 ifelse(abs(x)> 0.3*max(x), "bold", "normal")),
-          color = ifelse(x==-1e-9,'lightgrey', ifelse(abs(x)> 0.3*max(x), 'white',
+                                 ifelse(abs(x)> 0.3*max_x, "bold", "normal")),
+          color = ifelse(x==-1e-9,'lightgrey', ifelse(abs(x)> 0.3*max_x, 'white',
                                          ifelse(x==0,'lightgrey','black'))),
           `background-color` = ifelse(x==-1e-9,'lightgrey',
                                       csscolor(matrix(as.integer(colorRamp(...)(xnormalize(as.numeric(x)))), 

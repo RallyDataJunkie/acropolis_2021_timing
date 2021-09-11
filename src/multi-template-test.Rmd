@@ -89,7 +89,11 @@ cat("Done setup", file=logFile, sep='\n')
 ```{r  message=FALSE, echo=FALSE, error=FALSE, warning=FALSE, results='asis'}
 #stage_list=list("SS1", "SS2", "SS3", "SS4", "SS5", "SS6", "SS7", "SS8", "SS9", "SS10", "SS11", "SS12", "SS13", "SS14", "SS15", "SS16", "SS17", "SS18", "SS19", "SS20")
 #stage_list=list("SS1", "SS2", "SS3", "SS4", "SS5", "SS6", "SS7", "SS8", "SS9","SS10", "SS11", "SS12", "SS13", "SS14", "SS15", "SS16", "SS17", "SS18")
-stage_list=list("SS1", "SS2", "SS3", "SS4", "SS5", "SS6", "SS7", "SS8", "SS9", "SS10")
+stage_list=list("SS1", "SS2", "SS3", "SS4", "SS5", "SS6", "SS7", "SS8", "SS9", "SS10", "SS11", "SS12")
+#stage_list=list("SS1", "SS2")
+
+stage_codes =  unlist(stage_list)
+last_stage_code = stage_codes[length(stage_codes)]
 
 # Just in case
 stage_list = unique(stage_list)
@@ -102,6 +106,28 @@ src = knit_expand("overall-template.Rmd")
 cat(knit_child(text=src,
                options = list(echo=FALSE, warning=FALSE, error=FALSE),
                quiet=TRUE))
+```
+
+# Overall Driver Reports {-}
+
+Summary reports over all completed stages, rebased to each driver.
+
+```{r looper_overall_driver, message=FALSE, echo=FALSE,error=FALSE, warning=FALSE, results='asis'}
+for (driverEntryId in wrc_entries){
+    #driverEntryId=22431
+    driverCode = cars[cars$entryId==driverEntryId, 'code']
+    
+    # Remove accents for use in chunk labels/image names
+    driverCodeClean = stringi::stri_trans_general(driverCode, "Latin-ASCII")
+    
+    template = "driver_overall_template.Rmd"
+    #template="empty_template.Rmd"
+    src = knit_expand(template)
+    cat(knit_child(text=src,
+                     options = list(echo=FALSE, warning=FALSE, error=FALSE),
+                     quiet=TRUE))
+    
+  }
 ```
 
 # Loop Reports {-}
