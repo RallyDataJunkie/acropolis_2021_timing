@@ -534,6 +534,7 @@ out_table %>% mutate(across(stage_codes, isLead))
 ```
 
 
+
 ```{r}
 last_stage_code = stage_codes[length(stage_codes)]
 
@@ -579,7 +580,7 @@ multi_overall_lead_lost_wide = multi_overall_lead_previous_long %>%
 multi_overall_lead_lost_wide
 ```
 
-Gained lead:
+Gained overall lead:
 
 ```{r}
 multi_overall_lead_gained_wide = multi_overall_lead_previous_long %>%
@@ -588,7 +589,16 @@ multi_overall_lead_gained_wide = multi_overall_lead_previous_long %>%
 
 multi_overall_lead_gained_wide
 ```
+Stage winner gained overall lead
 
+```{r}
+tmp_truth = data.frame((multi_stage_win_truth %>% select(!code)) & multi_overall_lead_gained_wide %>% select(!code))
+
+multi_overall_stagewin_lead_gained_wide = multi_stage_win_truth %>%
+  select(code)%>%  cbind(tmp_truth)
+
+multi_overall_stagewin_lead_gained_wide
+```
 
 ## Gap to the Driver in Overall Lead at Each Stage End
 

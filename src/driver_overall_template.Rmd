@@ -32,12 +32,11 @@ last_col_idx = length(driver_rebased) #which(colnames(driver_rebased) == last_st
   caption = paste0('Stage delta (s) — ', driverCode, ' — ', rally_name)
   
   
-  # TO DO - need to sort the table by overall leader
-  # at end of last available stage
-  
   # TO DO - If we have more than 10 columns this is too wide.
   # Need to group by every 10 columns via a template
   driver_rebased %>% 
+    # Need to sort the table by overall leader
+    # at end of last available stage
     dplyr::arrange(factor(code, levels = overall_order)) %>%
     mutate_if(is.numeric, round, digits = 1)  %>%
     formattable(align='c',
@@ -45,6 +44,13 @@ last_col_idx = length(driver_rebased) #which(colnames(driver_rebased) == last_st
                    entryId=FALSE), caption=caption )
 
 }
+
+# for each group of 10 or fewer cols, generate the table
+# for i in ceiling(length(stage_codes)/10)
+# get cols: code, then eg 2:11, 12:21, 22:24 
+# max_val =  (i*10)+1
+# max_val = ifelse(max_val>length(stage_codes),length(stage_codes), max_val )
+# so (i-1)*10+2:maxval
 ```
 
 *TO DO - the chart is not scrollable so we need to template the table to produce as many tables as required with 10 stage columns each.*
