@@ -256,8 +256,6 @@ pos_gain_sparkline_top10 <- pos_gain_long_top10 %>%
 multi_overall_wide_pos_$overall_poschart = gt_overall_pos_plots
 ```
 
-*TO DO - this is misleading. Drivers fall of the pace are dropped the chart but the chart should show the line going off the chart.*
-
 ```{r warning=FALSE }
 # Stage Pace Calculations
 
@@ -287,8 +285,6 @@ pace_stage = pace_wide_rebased %>%
                 merge(stages[,c('code', 'start_dist', 'cum_dist')],
                           by='code')
 ```
-
-*TO DO - the fastest pace line should have a purple colour.*
 
 ## Rally Sparkline Summary
 
@@ -335,6 +331,8 @@ g + labs(title = paste0("Off-the-pace chart for overall leader"),
 ) 
 ```
 
+*TO DO - this is misleading. Drivers fall of the pace are dropped the chart but the chart should show the line going off the chart.*
+
 
 ## Stage Pace
 
@@ -380,6 +378,8 @@ g_pm + geom_rect(data=pace_stage[pace_stage$code_driver==overall_lead_code,],
                  linetype="dotted",
                  color='lightgrey') + ylim(ypace_max, ypace_min-0.4)
 ```
+
+*TO DO - the fastest pace line should have a purple colour.*
 
 
 ## Gap to Overall Leader at Each Stage End
