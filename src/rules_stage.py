@@ -94,6 +94,10 @@ with ruleset('rule_multi_stage'):
         #And add even more variation possibilities into the returned generated sentence
         txt=f'{c.m.code} {stage_pos}{t} {lead_typ}{t3}.'
         txt=txt.replace(' ,',',').replace(',,',',')
+        
+        if not isnull(c.m.control):
+          txt = f"{txt} {c.m.code} also picked up a {c.m.penaltyDurationS}s penalty at {c.m.control} / {c.location} {c.m.type} ({c.m.reason})."
+        
         txts.append(txt)
         stage_txts[c.m.code] = txt
         c.s.prev_code = c.m.code
@@ -137,6 +141,10 @@ with ruleset('rule_multi_stage'):
         #And add even more variation possibilities into the returned generated sentence
         txt=f'{c.m.code} {stage_pos} {lead_typ}{t}{t2}.'
         txt=txt.replace(' ,',',').replace(',,',',')
+        
+        if not isnull(c.m.control):
+          txt = f"{txt} {c.m.code} also picked up a {c.m.penaltyDurationS}s penalty at {c.m.control} / {c.location} {c.m.type} ({c.m.reason})."
+        
         txts.append(txt)
         stage_txts[c.m.code] = txt
         c.s.prev_code = c.m.code

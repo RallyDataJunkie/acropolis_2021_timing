@@ -256,6 +256,7 @@ pos_gain_sparkline_top10 <- pos_gain_long_top10 %>%
 multi_overall_wide_pos_$overall_poschart = gt_overall_pos_plots
 ```
 
+*TO DO - this is misleading. Drivers fall of the pace are dropped the chart but the chart should show the line going off the chart.*
 
 ```{r warning=FALSE }
 # Stage Pace Calculations
@@ -287,7 +288,7 @@ pace_stage = pace_wide_rebased %>%
                           by='code')
 ```
 
-
+*TO DO - the fastest pace line should have a purple colour.*
 
 ## Rally Sparkline Summary
 
@@ -422,14 +423,16 @@ map_controlId = function(df, controls){
     rename(control = code2)
 }
 
-get_penalties(eventId) %>%
+penalties = get_penalties(eventId) %>%
   filter(entryId %in% wrc_entries)  %>% map_driver_names(cars) %>%
   map_controlId(controls) %>%
-  mutate('penaltyDuration (s)' = penaltyDurationMs/1000 ) %>%
+  mutate('penaltyDurationS' = penaltyDurationMs/1000 ) %>%
     # Limit columns and set column order
     select(-c(controlId, penaltyDurationMs, penaltyDurationMs, penaltyId)) %>%
     # Move last column to first
-    select(code, control, location, type, reason, 'penaltyDuration (s)')  %>%
+    select(code, control, location, type, reason, 'penaltyDurationS')
+
+penalties %>%
   formattable(caption=paste("Penalties", rally_name, sep=", "))
  # select(code, penaltyDuration, reason)
 ```
@@ -636,7 +639,9 @@ overall_reporter_view = multi_overall_lead_previous_long %>%
          rename(overall_pos = position) %>%
          dplyr::arrange(overall_pos) %>%
          mutate(overall_diff=overall_gap-lag(overall_gap),
-                overall_chase=lead(overall_gap)-overall_gap)
+                overall_chase=lead(overall_gap)-overall_gap) %>%
+        mutate(stagenum = str_extract(stage,"\\d+")) %>% 
+        left_join(penalties %>% mutate(stagenum = str_extract(control,"\\d+")), by=c('stagenum', 'code'))
 
 # TO DO - it would be useful to have the gap/diff change from each stage 
 # Also, whether the person ahead or behind is in the same position
