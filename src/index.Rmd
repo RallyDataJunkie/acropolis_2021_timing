@@ -32,7 +32,7 @@ rally_name = paste0(s[s$id==eventId,'name'], ", 2021")
 
 # Preface {-}
 
-Automatically generated stage timing and results for stages on *`r rally_name`, 2021*.
+Automatically generated stage timing and results for stages on *`r rally_name`*.
 
 Based on analysis of timing and results data downloaded from the WRC website.
 
