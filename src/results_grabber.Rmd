@@ -1,15 +1,17 @@
 # WRC Results Grabber
 
-
 ```{r}
 source('_code/wrc-api.R')
+
+# Use the event ID grabbed from the season table as the event key column in all tables
 
 save_data = function(df, fn, eventkey, dirpath = "results_data/") {
   if (!dir.exists(dirpath))
       dir.create(dirpath, recursive=TRUE)
 
   if(!is_null(eventkey))
-    df = df %>% mutate(eventkey=eventkey)
+    df = df %>% mutate(eventkey=eventkey) %>%
+          select(eventkey, everything())
 
   write.csv(df, file.path(dirpath, fn), row.names = FALSE)
 }
@@ -17,7 +19,9 @@ save_data = function(df, fn, eventkey, dirpath = "results_data/") {
 ```
 
 ```{r}
-season = get_active_season() %>% select(-eventDays)
+season = get_active_season() %>% select(-eventDays) %>%
+          mutate(eventkey=id) %>% select(eventkey, everything())
+
 eventId = get_eventId_from_name(season, 'acropolis')
 
 save_data(season, "season.csv", NULL)

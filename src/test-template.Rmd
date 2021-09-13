@@ -58,6 +58,9 @@ if (use_group_rank) {
                                    id_col='code')
 }
 
+
+#save_data(full_splits_wide, paste0("full_splits_wide", stage_code, ".csv"))
+
 #kable(full_splits_wide)
 ```
 
@@ -87,6 +90,7 @@ for (s in split_names) {
   section_pace_wide[,s] = section_pace_wide[,s] / full_split_distances[s]
 }
 
+#save_data(full_durations_wide, paste0("full_durations_wide", stage_code, ".csv"))
 ```
 
 ### Split Locations
@@ -97,6 +101,7 @@ Length of each split section in km:
 dist_df = data.frame(full_split_distances) %>% 
               mutate(stage_dist = cumsum(full_split_distances))
 
+#save_data(dist_df, paste0("split_distances", stage_code, ".csv"))
 kable(dist_df)
 ```
 

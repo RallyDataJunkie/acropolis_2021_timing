@@ -1,0 +1,76 @@
+"eventkey","itinerarySectionId","controlId","eventId","stageId","type","code","location","timingPrecision","distance","targetDuration","targetDurationMs","firstCarDueDateTime","firstCarDueDateTimeLocal","status","controlPenalties","roundingPolicy","locked","bogey","bogeyMs"
+1746,"893",9355,174,NA,"TimeControl","TC0","Acropolis Ceremonial Start","Minute",NA,NA,NA,"2021-09-09T14:30:00","2021-09-09T17:30:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"893",9356,174,NA,"TimeControl","TC0A","Holding Area & Technical Zone IN","Minute",1.59,"00:15:00",900000,"2021-09-09T14:45:00","2021-09-09T17:45:00+03:00","Completed","Late","NoRounding",TRUE,NA,NA
+1746,"893",9391,174,2236,"TimeControl","TC1","Holding Area OUT","Minute",NA,"00:20:00",1200000,"2021-09-09T15:05:00","2021-09-09T18:05:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"893",9392,174,2236,"StageStart","SS1","COSMOTE 5G Athens Stage","Minute",0.98,"00:03:00",180000,"2021-09-09T15:08:00","2021-09-09T18:08:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"893",9393,174,2236,"FlyingFinish","SF1","COSMOTE 5G Athens Stage","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"893",9357,174,NA,"TimeControl","TC1A","Syntagma Square Parc Ferme IN","Minute",0.13,"00:05:00",300000,"2021-09-09T15:13:00","2021-09-09T18:13:00+03:00","Completed","Late","NoRounding",TRUE,NA,NA
+1746,"894",9358,174,NA,"TimeControl","TC1B","Athens Parc Ferme OUT","Minute",NA,NA,NA,"2021-09-10T06:00:00","2021-09-10T09:00:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"894",9394,174,2231,"TimeControl","TC2","Aghii Theodori","Minute",71.59,"01:15:00",4500000,"2021-09-10T07:15:00","2021-09-10T10:15:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"894",9395,174,2231,"StageStart","SS2","Aghii Theodori 1","Minute",17.54,"00:03:00",180000,"2021-09-10T07:18:00","2021-09-10T10:18:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"894",9396,174,2231,"FlyingFinish","SF2","Aghii Theodori 1","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"894",9359,174,NA,"RegroupIn","TC2A","Regroup & Tecnhical Zone IN","Minute",6.08,"00:38:00",2280000,"2021-09-10T07:56:00","2021-09-10T10:56:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"895",9360,174,NA,"RegroupOut","TC2B","Regroup & Tecnhical Zone OUT","Minute",NA,"00:10:00",600000,"2021-09-10T08:06:00","2021-09-10T11:06:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"895",9397,174,2228,"TimeControl","TC3","Loutraki","Minute",0.11,"00:02:00",120000,"2021-09-10T08:08:00","2021-09-10T11:08:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"895",9400,174,2228,"StageStart","SS3","Loutraki","Minute",19.4,"00:03:00",180000,"2021-09-10T08:11:00","2021-09-10T11:11:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"895",9399,174,2228,"FlyingFinish","SF3","Loutraki","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"895",9364,174,NA,"RegroupIn","TC3A","Regroup & Tecnhical Zone IN","Minute",7.69,"00:30:00",1800000,"2021-09-10T08:41:00","2021-09-10T11:41:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9363,174,NA,"RegroupOut","TC3B","Regroup & TZ OUT - TFZ IN","Minute",NA,"00:45:00",2700000,"2021-09-10T09:26:00","2021-09-10T12:26:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"896",9361,174,NA,"TimeControl","TC3C","TFZ OUT","Minute",NA,"00:15:00",900000,"2021-09-10T09:41:00","2021-09-10T12:41:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9409,174,2230,"TimeControl","TC4","Aghii Theodori","Minute",25.42,"00:40:00",2400000,"2021-09-10T10:21:00","2021-09-10T13:21:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9401,174,2230,"StageStart","SS4","Aghii Theodori 2","Minute",17.54,"00:03:00",180000,"2021-09-10T10:24:00","2021-09-10T13:24:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"896",9402,174,2230,"FlyingFinish","SF4","Aghii Theodori 2","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"896",9403,174,2232,"TimeControl","TC5","Thiva","Minute",115.43,"02:20:00",8400000,"2021-09-10T12:44:00","2021-09-10T15:44:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9404,174,2232,"StageStart","SS5","Thiva","Minute",23.27,"00:03:00",180000,"2021-09-10T12:47:00","2021-09-10T15:47:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"896",9405,174,2232,"FlyingFinish","SF5","Thiva","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"896",9406,174,2235,"TimeControl","TC6","Elatia","Minute",75.67,"01:50:00",6600000,"2021-09-10T14:37:00","2021-09-10T17:37:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9407,174,2235,"StageStart","SS6","Elatia","Minute",11.65,"00:03:00",180000,"2021-09-10T14:40:00","2021-09-10T17:40:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"896",9408,174,2235,"FlyingFinish","SF6","Elatia","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"896",9354,174,NA,"TimeControl","TC6A","Parc Ferme & Technical Zone IN","Minute",94.28,"02:00:00",7200000,"2021-09-10T16:40:00","2021-09-10T19:40:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"896",9353,174,NA,"TimeControl","TC6B","Parc Ferme - Flexi Service A IN","Minute",NA,"00:10:00",600000,"2021-09-10T16:50:00","2021-09-10T19:50:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"896",9362,174,NA,"TimeControl","TC6C","FLEXI SERVICE A OUT - Parc Ferme IN (Early arrival permitted)","Minute",NA,"00:45:00",2700000,"2021-09-10T17:35:00","2021-09-10T20:35:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"897",9351,174,NA,"TimeControl","TC6D","Parc Ferme OUT - Service B IN","Minute",NA,NA,NA,"2021-09-11T04:15:00","2021-09-11T07:15:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"897",9350,174,NA,"TimeControl","TC6E","SERVICE B OUT","Minute",NA,"00:15:00",900000,"2021-09-11T04:30:00","2021-09-11T07:30:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"897",9390,174,2238,"TimeControl","TC7","Pavliani","Minute",46.59,"00:59:00",3540000,"2021-09-11T05:29:00","2021-09-11T08:29:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"897",9398,174,2238,"StageStart","SS7","Pavliani 1","Minute",24.25,"00:03:00",180000,"2021-09-11T05:32:00","2021-09-11T08:32:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"897",9365,174,2238,"FlyingFinish","SF7","Pavliani 1","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"897",9387,174,2237,"TimeControl","TC8","Gravia","Minute",50.15,"01:27:00",5220000,"2021-09-11T06:59:00","2021-09-11T09:59:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"897",9366,174,2237,"StageStart","SS8","Gravia","Minute",24.81,"00:03:00",180000,"2021-09-11T07:02:00","2021-09-11T10:02:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"897",9367,174,2237,"FlyingFinish","SF8","Gravia","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"897",9334,174,NA,"RegroupIn","TC8A","Regroup & Tecnhical Zone IN","Minute",23,"00:52:00",3120000,"2021-09-11T07:54:00","2021-09-11T10:54:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"898",9336,174,NA,"RegroupOut","TC8B","Regroup  OUT - TFZ IN","Minute",NA,"00:25:00",1500000,"2021-09-11T08:19:00","2021-09-11T11:19:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"898",9337,174,NA,"TimeControl","TC8C","TFZ OUT","Minute",NA,"00:15:00",900000,"2021-09-11T08:34:00","2021-09-11T11:34:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"898",9368,174,2229,"TimeControl","TC9","Bauxites","Minute",3.77,"00:15:00",900000,"2021-09-11T08:49:00","2021-09-11T11:49:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"898",9369,174,2229,"StageStart","SS9","Bauxites","Minute",22.97,"00:03:00",180000,"2021-09-11T08:52:00","2021-09-11T11:52:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"898",9370,174,2229,"FlyingFinish","SF9","Bauxites","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"898",9338,174,2227,"TimeControl","TC10","Eleftherohori ","Minute",41.07,"01:10:00",4200000,"2021-09-11T10:02:00","2021-09-11T13:02:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"898",9371,174,2227,"StageStart","SS10","Eleftherohori 1 (Live TV)","Minute",18.14,"00:06:00",360000,"2021-09-11T10:08:00","2021-09-11T13:08:00+03:00","Interrupted","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"898",9372,174,2227,"FlyingFinish","SF10","Eleftherohori 1 (Live TV)","Tenth",NA,NA,NA,NA,NA,"Interrupted","None","NoRounding",TRUE,NA,NA
+1746,"898",9373,174,NA,"RegroupIn","TC10A","Regroup & Tecnhical Zone IN","Minute",27.23,"00:55:00",3300000,"2021-09-11T11:03:00","2021-09-11T14:03:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"899",9339,174,NA,"RegroupOut","TC10B","Regroup  OUT - SERVICE C IN","Minute",NA,"00:30:00",1800000,"2021-09-11T11:33:00","2021-09-11T14:33:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"899",9340,174,NA,"TimeControl","TC10C","Service C OUT","Minute",NA,"00:40:00",2400000,"2021-09-11T12:13:00","2021-09-11T15:13:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"899",9374,174,2240,"TimeControl","TC11","Pavliani","Minute",46.59,"01:10:00",4200000,"2021-09-11T13:23:00","2021-09-11T16:23:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"899",9375,174,2240,"StageStart","SS11","Pavliani 2","Minute",24.25,"00:03:00",180000,"2021-09-11T13:26:00","2021-09-11T16:26:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"899",9376,174,2240,"FlyingFinish","SF11","Pavliani 2","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"899",9377,174,2241,"TimeControl","TC12","Elefthehori","Minute",52.19,"01:36:00",5760000,"2021-09-11T15:02:00","2021-09-11T18:02:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"899",9378,174,2241,"StageStart","SS12","Eleftherohori 2 (Live TV)","Minute",18.14,"00:06:00",360000,"2021-09-11T15:08:00","2021-09-11T18:08:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"899",9379,174,2241,"FlyingFinish","SF12","Eleftherohori 2 (Live TV)","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"899",9341,174,NA,"TimeControl","TC12A","Parc Ferme & Tecnhical Zone IN","Minute",27.23,"00:55:00",3300000,"2021-09-11T16:03:00","2021-09-11T19:03:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"899",9342,174,NA,"TimeControl","TC12B","Parc Ferme  OUT - Flexi Service D IN","Minute",NA,"00:10:00",600000,"2021-09-11T16:13:00","2021-09-11T19:13:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"899",9343,174,NA,"TimeControl","TC12C","FLEXI SERVICE D OUT - Parc Ferme IN (Early arrival permitted)","Minute",NA,"00:45:00",2700000,"2021-09-11T16:58:00","2021-09-11T19:58:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"900",9344,174,NA,"TimeControl","TC12D","Parc Ferme OUT - Service E IN","Minute",NA,NA,NA,"2021-09-12T03:15:00","2021-09-12T06:15:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9345,174,NA,"TimeControl","TC12E","SERVICE E OUT","Minute",NA,"00:15:00",900000,"2021-09-12T03:30:00","2021-09-12T06:30:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9380,174,2233,"TimeControl","TC13","Tarzan","Minute",80.6,"01:35:00",5700000,"2021-09-12T05:05:00","2021-09-12T08:05:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9381,174,2233,"StageStart","SS13","Tarzan 1 (live stage)","Minute",23.37,"00:03:00",180000,"2021-09-12T05:08:00","2021-09-12T08:08:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"900",9382,174,2233,"FlyingFinish","SF13","Tarzan 1 (live stage)","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"900",9383,174,2234,"TimeControl","TC14","Pyrgos","Minute",61.68,"01:40:00",6000000,"2021-09-12T06:48:00","2021-09-12T09:48:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9384,174,2234,"StageStart","SS14","Pyrgos","Minute",33.2,"00:03:00",180000,"2021-09-12T06:51:00","2021-09-12T09:51:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"900",9385,174,2234,"FlyingFinish","SF14","Pyrgos","Tenth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"900",9346,174,NA,"TimeControl","TC14A","Tyring Fitting Zone IN","Minute",26.26,"01:10:00",4200000,"2021-09-12T08:01:00","2021-09-12T11:01:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9347,174,NA,"TimeControl","TC14B","TFZ OUT","Minute",NA,"00:15:00",900000,"2021-09-12T08:16:00","2021-09-12T11:16:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"900",9348,174,NA,"RegroupIn","TC14C","Regroup & Technical Zone IN","Minute",52.93,"01:05:00",3900000,"2021-09-12T09:21:00","2021-09-12T12:21:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"901",9349,174,NA,"RegroupOut","TC14D","Regroup & Technical Zone OUT","Minute",NA,"00:40:00",2400000,"2021-09-12T10:01:00","2021-09-12T13:01:00+03:00","Completed","None","NoRounding",TRUE,NA,NA
+1746,"901",9386,174,2239,"TimeControl","TC15","Tarzan","Minute",10.54,"00:14:00",840000,"2021-09-12T10:15:00","2021-09-12T13:15:00+03:00","Completed","All","NoRounding",TRUE,NA,NA
+1746,"901",9388,174,2239,"StageStart","SS15","Tarzan 2 - WOLF  Power Stage","Minute",12.68,"00:03:00",180000,"2021-09-12T10:18:00","2021-09-12T13:18:00+03:00","Completed","None","RoundToClosestMinute",TRUE,NA,NA
+1746,"901",9389,174,2239,"FlyingFinish","SF15","Tarzan 2 - WOLF  Power Stage","Thousandth",NA,NA,NA,NA,NA,"Completed","None","NoRounding",TRUE,NA,NA
+1746,"901",9335,174,NA,"TimeControl","TC15A","Holding Area - Finish Ramp IN ","Minute",45.84,"02:00:00",7200000,"2021-09-12T12:18:00","2021-09-12T15:18:00+03:00","Completed","Late","NoRounding",TRUE,NA,NA
