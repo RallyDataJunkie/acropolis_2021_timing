@@ -1,0 +1,83 @@
+# WRC Results Grabber
+
+
+```{r}
+source('_code/wrc-api.R')
+
+save_data = function(df, fn, eventkey, dirpath = "results_data/") {
+  if (!dir.exists(dirpath))
+      dir.create(dirpath, recursive=TRUE)
+
+  if(!is_null(eventkey))
+    df = df %>% mutate(eventkey=eventkey)
+
+  write.csv(df, file.path(dirpath, fn), row.names = FALSE)
+}
+
+```
+
+```{r}
+season = get_active_season() %>% select(-eventDays)
+eventId = get_eventId_from_name(season, 'acropolis')
+
+save_data(season, "season.csv", NULL)
+```
+
+
+```{r}
+itinerary = get_itinerary(eventId)
+sections = get_sections(itinerary)
+controls = get_controls(sections)
+
+stages = get_stages(sections) #status and code are useful...
+
+# For driver details
+entries = get_rally_entries(eventId)
+cars = get_car_data(entries)
+
+
+stage_cols = c('stageId', 'number', 'name', 'distance', 'code')
+stage_info = stages %>%
+                select(all_of(stage_cols)) %>%
+                # Tidy up the stage name
+                mutate(name = str_replace(name, ' \\(Live TV\\)', ''))
+```
+
+```{r}
+save_data(cars, "cars.csv", eventId)
+save_data(controls, "controls.csv", eventId)
+save_data(entries %>% select(-eventClasses, -tags), "entries.csv", eventId)
+save_data(stage_info, "stage_info.csv", eventId)
+save_data(stages, "stages.csv", eventId)
+
+```
+
+```{r}
+# Overall results
+stage_codes =  unlist(stage_list)
+stage_list_codes = stages[stages$code %in% stage_codes, 'stageId']
+
+multi_overall_results = get_multi_overall(stage_list_codes) %>%
+                            mutate(diffFirstS = diffFirstMs/1000,
+                                   totalTimeS = totalTimeMs/1000)
+
+multi_stage_times = get_multi_stage_times(stage_list_codes)
+
+save_data(multi_overall_results, "multi_overall_results.csv", eventId)
+save_data(multi_stage_times, "multi_stage_times.csv", eventId)
+
+```
+
+```{r}
+# Stage results / splits
+
+# This is suboptimal - we actually pull all the splits data twice
+full_splits_wide = get_multi_split_times(stage_list_codes)
+full_splits_locations = get_multi_split_locations(stage_list_codes)
+
+save_data(full_splits_wide, "full_splits_wide.csv", eventId)
+
+save_data(full_splits_locations,"split_distances.csv", eventId)
+```
+
+

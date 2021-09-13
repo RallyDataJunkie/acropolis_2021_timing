@@ -371,6 +371,20 @@ get_multi_split_times = function(stage_list){
   multi_split_times
 }
 
+## ---- get_split_locations2 --------
+get_split_locations2 = function(stageId, eventId) {
+  splits = get_splits(eventId, stageId)
+  splits$splitPoints
+}
+
+## ---- get_multi_split_locations --------
+get_multi_split_locations = function(stage_list){
+  multi_split_locations = stage_list %>%
+    map(get_split_locations2, eventId=eventId) %>% 
+    bind_rows()
+  multi_split_locations
+}
+
 ## ---- rebase --------
 rebase = function(df, id, rebase_cols,
                   id_col='entryId', base=FALSE,
